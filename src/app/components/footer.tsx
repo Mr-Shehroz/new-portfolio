@@ -1,52 +1,18 @@
-'use client';
-import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
-
-const Footer: React.FC = () => {
-  return (
-    <footer className="bg-gradient-to-t from-blue-950 via-purple-900 to-indigo-900 text-white py-12 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-
-        {/* Logo or Title */}
-        <div className="text-2xl font-bold text-yellow-400">
-          Shehroz Khan
-        </div>
-
-        {/* Social Links */}
-        <div className="flex gap-6">
-          <a
-            href="mailto:shehroz.fullstack@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-yellow-400 transition"
-          >
-            <Mail size={20} />
-          </a>
-          <a
-            href="https://github.com/Mr-Shehroz"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-yellow-400 transition"
-          >
-            <Github size={20} />
-          </a>
-          <a
-            href="https://linkedin.com/in/yourusername"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-yellow-400 transition"
-          >
-            <Linkedin size={20} />
-          </a>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-sm text-gray-400 text-center md:text-right">
-          &copy; {new Date().getFullYear()} Shehroz Khan All rights reserved.
-        </div>
-      </div>
-    </footer>
-  );
-};
-
-export default Footer;
+import Image from "next/image";
+import { josefinSans } from "../fonts";
+import { GitHubButton, LinkedInButton, TwitterButton } from "./icons";
+export default function Footer() {
+    return (
+        <footer className="bg-[#100425] py-10">
+            <Image className="w-[80%] mx-auto" src="/footer-line.svg" height={100} width={100} alt="Footer line" />
+            <div className="max-w-7xl mx-auto flex items-center justify-between mt-6">
+                <h4 className={`text-[18px] font-light text-[#FAFAFA] ${josefinSans.className}`}>2024 - Shehroz Khan, All rights reserved</h4>
+                <div className="flex items-center gap-4">
+                    <GitHubButton/>
+                    <TwitterButton/>
+                    <LinkedInButton/>
+                </div>
+            </div>
+        </footer>
+    )
+}

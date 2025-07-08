@@ -1,45 +1,17 @@
-'use client';
-import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
+import { josefinSans } from "../fonts";
 
-const About: React.FC = () => {
-  return (
-    <section
-      id="about"
-      className="bg-gradient-to-b from-indigo-800 via-purple-900 to-blue-900 text-white py-20 px-6"
-    >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Left Image / Illustration */}
-        <div className="flex justify-center">
-          <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden border-4 border-white shadow-xl">
-            <Image
-              src="/about-img.png" // Place your image in /public folder
-              alt="About Shehroz"
-              width={320}
-              height={320}
-              className="object-cover w-full h-full"
-            />
-          </div>
-        </div>
-
-        {/* Right Text Content */}
-        <div className="space-y-6 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-yellow-400">
-            About Me
-          </h2>
-          <p className="text-lg text-gray-200 leading-relaxed">
-            I'm <strong>Shehroz</strong>, a <strong>Full Stack Developer</strong> based in Pakistan with a strong background in both frontend and backend technologies.
-          </p>
-          <p className="text-md text-gray-300">
-            I specialize in <span className="text-yellow-300">Next.js, React, Node.js, Express, MongoDB</span> and love building scalable web apps and APIs. I’m also experienced in CMS systems like WordPress, and I manage servers and deployment pipelines.
-          </p>
-          <p className="text-md text-gray-300">
-            I'm passionate about writing clean code, optimizing performance, and delivering beautiful user experiences.
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default About;
+export default function About() {
+    return (
+        <section id="about" className={`bg-[#100425] flex flex-col items-center relative ${josefinSans.className}`}>
+            <Image className="w-[670px] h-[737px] top-[-100] absolute right-0" src="/line-box.svg" height={100} width={100} alt="line-box"/>
+            <div className="max-w-[900px] mx-auto pt-20 flex flex-col items-center text-center">
+                <h2 className="text-[66px] font-semibold bg-gradient-to-r from-[#5DFFFF] to-[#AE0CA7] bg-clip-text text-transparent">About</h2>
+                <p className="text-[18px] font-normal leading-[30px] text-[#FAFAFA] pt-10">As a full stack developer, I work across the entire development lifecycle using technologies like React, Next.js, Node.js, and MongoDB. I enjoy solving complex problems, optimizing performance, and delivering solid user experiences. I have hands-on experience building responsive front-end interfaces, developing secure and scalable back-end systems, and integrating APIs and databases to create seamless, full-featured applications. I follow modern coding standards, prioritize clean and maintainable code, and enjoy collaborating with teams to turn ideas into real products.</p>
+            </div>
+            <div className="py-30">
+                <Image className="w-[895px]" src="/skills.svg" height={100} width={100} alt="skills"/>
+            </div>
+        </section>
+    )
+}
